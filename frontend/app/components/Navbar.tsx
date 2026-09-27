@@ -20,8 +20,8 @@ export default function Navbar() {
         <header className="bg-[#FAF9F6] border-b border-gray-200 py-4 px-6 md:px-12">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
 
-                <Link href="/" className="flex items-center gap-3">
-                    <div className="relative w-10 h-10">
+                <Link href="/" className="flex items-center gap-4">
+                    <div className="relative w-16 h-16">
                         <Image
                             src="/logo.png"
                             alt="CLCE Bangladesh Logo"
@@ -30,10 +30,10 @@ export default function Navbar() {
                         />
                     </div>
                     <div>
-                        <h1 className="text-xl font-bold text-gray-900 tracking-tight leading-none">
+                        <h1 className="text-2xl font-bold text-gray-900 tracking-tight leading-none">
                             Empowerment
                         </h1>
-                        <p className="text-xs text-gray-600 mt-1 font-medium">
+                        <p className="text-lg text-gray-600 mt-1 font-medium">
                             CLCE Bangladesh
                         </p>
                     </div>
@@ -47,11 +47,10 @@ export default function Navbar() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className={`transition-colors font-medium pb-1 ${
-                                    isActive
+                                className={`transition-colors font-medium pb-1 ${isActive
                                         ? 'text-gray-900 font-semibold border-b-2 border-gray-900'
                                         : 'text-gray-600 hover:text-gray-900'
-                                }`}
+                                    }`}
                             >
                                 {link.name}
                             </Link>

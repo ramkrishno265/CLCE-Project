@@ -8,7 +8,10 @@ const uploadRoutes = require('./routes/uploadRoutes');
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  credentials: true
+}));
 app.use(express.json());
 
 // API Routes

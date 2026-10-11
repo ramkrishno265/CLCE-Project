@@ -17,11 +17,12 @@ export default function Navbar() {
                 { name: 'About Us', href: '/about', desc: 'Learn more about CLCE' },
                 { name: 'Our Mission & Vision', href: '/about/mission-vision', desc: 'Our core goals & beliefs' },
                 { name: 'Our Team', href: '/about/team', desc: 'Meet our dedicated team' },
+                { name: 'Advisory Board', href: '/about/advisors', desc: 'Meet our advisory board' },
+                { name: 'Stories', href: '/about/stories', desc: 'Read our impact stories' },
             ]
         },
         { name: 'Programs', href: '/programs' },
         { name: 'Impact', href: '/impact' },
-        { name: 'Stories', href: '/stories' },
         { name: 'Get Involved', href: '/get-involved' },
     ];
 

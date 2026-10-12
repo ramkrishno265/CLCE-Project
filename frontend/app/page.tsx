@@ -1,7 +1,35 @@
 // app/page.tsx
 import Image from 'next/image';
+import StoryCard from './components/stores_card';
 
 export default function HomePage() {
+
+
+  const storiesData = [
+    {
+      img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80',
+      tag: 'Livelihoods & Enterprise',
+      title: 'From Local Craft to Global Artisan Market',
+      desc: 'How Amina established a sustainable weaving collective employing 24 women, scaling regional techniques into viable international micro-enterprises.',
+      link: '/stories/amina',
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=600&q=80',
+      tag: 'Education & Leadership',
+      title: 'The Classroom in the Garden',
+      desc: 'How solar learning labs and school gardens empowered young leaders like Grace to blend agronomy skills with foundational digital literacy.',
+      link: '/stories/classroom-garden',
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80',
+      tag: 'Community Development',
+      title: 'Building Resilience from Wood and Soil',
+      desc: 'How community workshops restored local furniture production and vocational apprenticeships, providing steady pathways for young youth.',
+      link: '/stories/resilience-wood-soil',
+    },
+  ];
+
+  
   return (
     <div className="bg-[#FAF9F6] min-h-screen text-gray-900 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-20 md:space-y-32">
@@ -234,72 +262,37 @@ export default function HomePage() {
 
         {/* ================= 6. STORIES OF CHANGE ================= */}
         <section className="pt-8 border-t border-gray-200/80 space-y-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div className="space-y-3 max-w-2xl">
-              <div className="text-xs font-semibold text-[#D97706] uppercase tracking-widest flex items-center gap-2">
-                <span>—</span> VOICES & IMPACT
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Stories of change</h2>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                Real narratives of courage, craft, and collective growth from the people leading their own transformation.
-              </p>
-            </div>
-            <div>
-              <a href="/stories" className="text-xs font-bold text-gray-900 hover:text-[#D97706] flex items-center gap-1.5 transition-colors">
-                View all stories →
-              </a>
-            </div>
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div className="space-y-3 max-w-2xl">
+          <div className="text-xs font-semibold text-[#D97706] uppercase tracking-widest flex items-center gap-2">
+            <span>—</span> VOICES & IMPACT
           </div>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Stories of change</h2>
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            Real narratives of courage, craft, and collective growth from the people leading their own transformation.
+          </p>
+        </div>
+        <div>
+          <a href="about/stories" className="text-xs font-bold text-gray-900 hover:text-[#D97706] flex items-center gap-1.5 transition-colors">
+            View all stories →
+          </a>
+        </div>
+      </div>
 
-          {/* 3 Story Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80',
-                tag: 'Livelihoods & Enterprise',
-                title: 'From Local Craft to Global Artisan Market',
-                desc: 'How Amina established a sustainable weaving collective employing 24 women, scaling regional techniques into viable international micro-enterprises.',
-                link: '/stories/amina',
-              },
-              {
-                img: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=600&q=80',
-                tag: 'Education & Leadership',
-                title: 'The Classroom in the Garden',
-                desc: 'How solar learning labs and school gardens empowered young leaders like Grace to blend agronomy skills with foundational digital literacy.',
-                link: '/stories/classroom-garden',
-              },
-              {
-                img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80',
-                tag: 'Community Development',
-                title: 'Building Resilience from Wood and Soil',
-                desc: 'How community workshops restored local furniture production and vocational apprenticeships, providing steady pathways for young youth.',
-                link: '/stories/resilience-wood-soil',
-              },
-            ].map((story, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-3xl shadow-sm border border-gray-200 flex flex-col justify-between space-y-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                <div className="space-y-4">
-                  <div className="relative w-full h-[220px] rounded-2xl overflow-hidden bg-gray-100 group">
-                    <img
-                      src={story.img}
-                      alt={story.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-semibold text-gray-800 shadow-sm">
-                      {story.tag}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold leading-snug">{story.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{story.desc}</p>
-                </div>
-                <div className="pt-4 border-t border-gray-100">
-                  <a href={story.link} className="text-xs font-bold text-gray-900 hover:text-[#D97706] flex items-center gap-1.5 transition-colors">
-                    Read story →
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+      {/* 3 Story Cards Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {storiesData.map((story, idx) => (
+          <StoryCard
+            key={idx}
+            img={story.img}
+            tag={story.tag}
+            title={story.title}
+            desc={story.desc}
+            link={story.link}
+          />
+        ))}
+      </div>
+    </section>
 
         {/* ================= 7. DARK BANNER & ACTION CARDS ================= */}
         <section className="space-y-16 pt-8 border-t border-gray-200/80">

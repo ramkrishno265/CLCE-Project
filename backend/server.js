@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const teamRoutes = require('./routes/teamRoutes');
 const uploadRoutes = require('./routes/uploadRoutes');
+const storeRoutes = require('./routes/storeRoutes');
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 // API Routes
 app.use('/api/team', teamRoutes);
 app.use('/api', uploadRoutes);
+app.use('/api/stores', storeRoutes);
 
 // Health check endpoint
 app.get('/', (req, res) => {
